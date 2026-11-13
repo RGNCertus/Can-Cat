@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can&Cat | Detalle del producto</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body>
+
+    <header class="encabezado">
+        <a th:href="@{/}" class="logo">
+            <img th:src="@{/img/logo.png}" alt="Logo de Can&Cat">
+        </a>
+
+        <nav class="navegacion">
+            <a th:href="@{/}">Inicio</a>
+            <a th:href="@{/catalogo}" class="activo">Productos</a>
+            <a th:href="@{/mis_pedidos}">Mis pedidos</a>
+        </nav>
+
+        <div class="acciones">
+            <a th:href="@{/login.html}" class="enlace-login">Iniciar sesión</a>
+            <a th:href="@{/registro}" class="boton boton-pequeno">Registrarse</a>
+            <a th:href="@{/carrito.html}" class="carrito">Carrito</a>
+        </div>
+    </header>
+
+    <main class="seccion">
+
+        <a th:href="@{/catalogo}" class="volver">Volver al catálogo</a>
+
+        <section class="detalle-producto">
+
+            <div class="detalle-imagen">
+                <img src="img/producto1.jpg" alt="Alimento para perros">
+            </div>
+
+            <div class="detalle-info">
+
+                <p class="etiqueta">ALIMENTOS PARA MASCOTAS</p>
+
+                <h1>Alimento para perros</h1>
+
+                <p class="precio detalle-precio">S/ 85.00</p>
+
+                <p class="disponible">Producto disponible</p>
+
+                <h3>Descripción</h3>
+
+                <p>
+                    Alimento balanceado para perros, elaborado para
+                    complementar su alimentación diaria y contribuir
+                    a su bienestar.
+                </p>
+
+                <h3>Presentación</h3>
+                <p>Bolsa de 3 kg.</p>
+
+                <h3>Cantidad</h3>
+
+                <input type="number" value="1" min="1" class="cantidad">
+
+                <a th:href="@{/carrito}" class="boton">
+                    Agregar al carrito
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <h2>Can&Cat</h2>
+        <p>Todo lo que tus mascotas necesitan, en un solo lugar.</p>
+        <p class="copyright">© 2026 Can&Cat. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

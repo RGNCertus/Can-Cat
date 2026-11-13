@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can&Cat | Confirmar pedido</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body>
+
+    <header class="encabezado">
+        <a th:href="@{/}" class="logo">
+            <img th:src="@{/img/logo.png}" alt="Logo de Can&Cat">
+        </a>
+
+        <nav class="navegacion">
+            <a th:href="@{/}">Inicio</a>
+            <a th:href="@{/catalogo}">Productos</a>
+            <a th:href="@{/mis_pedidos}">Mis pedidos</a>
+        </nav>
+
+        <div class="acciones">
+            <a th:href="@{/login}" class="enlace-login">Iniciar sesión</a>
+            <a th:href="@{/registro}" class="boton boton-pequeno">Registrarse</a>
+            <a th:href="@{/carrito}" class="carrito">Carrito</a>
+        </div>
+    </header>
+
+    <main class="seccion">
+
+        <div class="titulo-seccion">
+            <h2>Confirmar pedido</h2>
+            <p>Revisa los datos antes de finalizar tu compra.</p>
+        </div>
+
+        <section class="confirmacion-contenido">
+
+            <div class="datos-confirmacion">
+
+                <div class="bloque-confirmacion">
+                    <h3>Productos seleccionados</h3>
+
+                    <div class="producto-confirmacion">
+                        <img src="img/producto1.jpg" alt="Alimento para perros">
+                        <div>
+                            <h4>Alimento para perros</h4>
+                            <p>1 unidad</p>
+                            <p>S/ 85.00</p>
+                        </div>
+                    </div>
+
+                    <div class="producto-confirmacion">
+                        <img src="img/producto2.jpg" alt="Juguete para gatos">
+                        <div>
+                            <h4>Juguete para gatos</h4>
+                            <p>2 unidades</p>
+                            <p>S/ 36.00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bloque-confirmacion">
+                    <h3>Dirección de entrega</h3>
+                    <p>Av. Los Olivos 123</p>
+                    <p>Distrito: Santa Anita</p>
+                    <p>Referencia: Frente al parque principal</p>
+
+                    <a th:href="@{/direccion}" class="enlace-editar">
+                        Cambiar dirección
+                    </a>
+                </div>
+
+            </div>
+
+            <aside class="resumen-carrito">
+                <h3>Resumen del pedido</h3>
+
+                <div class="resumen-linea">
+                    <span>Subtotal</span>
+                    <span>S/ 121.00</span>
+                </div>
+
+                <div class="resumen-linea">
+                    <span>Envío</span>
+                    <span>Por coordinar</span>
+                </div>
+
+                <hr>
+
+                <div class="resumen-total">
+                    <span>Total</span>
+                    <span>S/ 121.00</span>
+                </div>
+
+                <button type="button" class="boton boton-completo">
+                    Confirmar pedido
+                </button>
+
+                <a th:href="@{/carrito}" class="seguir-comprando">
+                    Volver al carrito
+                </a>
+            </aside>
+
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <h2>Can&Cat</h2>
+        <p>Todo lo que tus mascotas necesitan, en un solo lugar.</p>
+        <p class="copyright">© 2026 Can&Cat. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

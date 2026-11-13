@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can&Cat | Mi perfil</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body>
+
+    <header class="encabezado">
+        <a th:href="@{/}" class="logo">
+            <img th:src="@{/img/logo.png}" alt="Logo de Can&Cat">
+        </a>
+
+        <nav class="navegacion">
+            <a th:href="@{/}">Inicio</a>
+            <a th:href="@{/catalogo}">Productos</a>
+            <a th:href="@{/is_pedidos}">Mis pedidos</a>
+        </nav>
+
+        <div class="acciones">
+            <a th:href="@{/perfil}" class="enlace-login">Mi perfil</a>
+            <a th:href="@{/carrito}" class="carrito">Carrito</a>
+        </div>
+    </header>
+
+    <main class="seccion">
+
+        <div class="titulo-seccion">
+            <h2>Mi perfil</h2>
+            <p>Consulta y actualiza tu información personal.</p>
+        </div>
+
+        <section class="tarjeta-formulario perfil-formulario">
+
+            <h2>Datos personales</h2>
+
+            <form>
+
+                <div class="campo">
+                    <label for="nombres">Nombres</label>
+                    <input type="text" id="nombres" value="Juan Carlos">
+                </div>
+
+                <div class="campo">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" id="apellidos" value="Pérez López">
+                </div>
+
+                <div class="campo">
+                    <label for="dni">DNI</label>
+                    <input type="text" id="dni" value="12345678" maxlength="8">
+                </div>
+
+                <div class="campo">
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" id="correo" value="juan@email.com">
+                </div>
+
+                <div class="campo">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" value="999888777">
+                </div>
+
+                <button type="submit" class="boton boton-completo">
+                    Guardar cambios
+                </button>
+
+            </form>
+
+            <div class="direcciones-perfil">
+                <h3>Mis direcciones</h3>
+
+                <div class="direccion-guardada">
+                    <p><strong>Dirección principal</strong></p>
+                    <p>Av. Los Olivos 123 - Santa Anita</p>
+                    <p>Referencia: Frente al parque principal</p>
+                </div>
+
+                <a th:href="@{/direccion}" class="enlace-editar">
+                    Agregar o modificar dirección
+                </a>
+            </div>
+
+            <div class="centrado">
+                <a th:href="@{/mis_pedidos}" class="enlace-editar">
+                    Consultar mis pedidos
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <h2>Can&Cat</h2>
+        <p>Todo lo que tus mascotas necesitan, en un solo lugar.</p>
+        <p class="copyright">© 2026 Can&Cat. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

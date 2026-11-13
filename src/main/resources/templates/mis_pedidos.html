@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can&Cat | Mis pedidos</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body>
+
+    <header class="encabezado">
+        <a th:href="@{/}" class="logo">
+            <img th:src="@{/img/logo.png}" alt="Logo de Can&Cat">
+        </a>
+
+        <nav class="navegacion">
+            <a th:href="@{/}">Inicio</a>
+            <a th:href="@{/catalogo}">Productos</a>
+            <a th:href="@{/mis_pedidos}" class="activo">Mis pedidos</a>
+        </nav>
+
+        <div class="acciones">
+            <a th:href="@{/perfil}" class="enlace-login">Mi perfil</a>
+            <a th:href="@{/carrito}" class="carrito">Carrito</a>
+        </div>
+    </header>
+
+    <main class="seccion">
+
+        <div class="titulo-seccion">
+            <h2>Mis pedidos</h2>
+            <p>Consulta tus compras y revisa su estado.</p>
+        </div>
+
+        <section class="tabla-pedidos">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>N.º de pedido</th>
+                        <th>Fecha</th>
+                        <th>Total</th>
+                        <th>Estado</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>#0001</td>
+                        <td>10/11/2026</td>
+                        <td>S/ 121.00</td>
+                        <td><span class="estado estado-pendiente">Pendiente</span></td>
+                        <td><a th:href="@{/confirmacion}">Ver detalle</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>#0002</td>
+                        <td>05/11/2026</td>
+                        <td>S/ 85.00</td>
+                        <td><span class="estado estado-proceso">En preparación</span></td>
+                        <td><a th:href="@{/confirmacion}">Ver detalle</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>#0003</td>
+                        <td>01/11/2026</td>
+                        <td>S/ 32.00</td>
+                        <td><span class="estado estado-entregado">Entregado</span></td>
+                        <td><a th:href="@{/confirmacion}">Ver detalle</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+        <div class="centrado">
+            <a th:href="@{/catalogo}" class="boton">Seguir comprando</a>
+        </div>
+
+    </main>
+
+    <footer class="pie">
+        <h2>Can&Cat</h2>
+        <p>Todo lo que tus mascotas necesitan, en un solo lugar.</p>
+        <p class="copyright">© 2026 Can&Cat. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

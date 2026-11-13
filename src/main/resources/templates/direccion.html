@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can&Cat | Dirección de entrega</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body>
+
+    <header class="encabezado">
+        <a th:href="@{/}" class="logo">
+            <img th:src="@{/img/logo.png}" alt="Logo de Can&Cat">
+        </a>
+
+        <nav class="navegacion">
+            <a th:href="@{/}">Inicio</a>
+            <a th:href="@{/catalogo}">Productos</a>
+            <a th:href="@{/mis_pedidos}">Mis pedidos</a>
+        </nav>
+
+        <div class="acciones">
+            <a th:href="@{/login}" class="enlace-login">Iniciar sesión</a>
+            <a th:href="@{/registro}" class="boton boton-pequeno">Registrarse</a>
+            <a th:href="@{/carrito}" class="carrito">Carrito</a>
+        </div>
+    </header>
+
+    <main class="seccion">
+
+        <div class="titulo-seccion">
+            <h2>Dirección de entrega</h2>
+            <p>Indica dónde deseas recibir tu pedido.</p>
+        </div>
+
+        <section class="tarjeta-formulario">
+
+            <h2>Registrar dirección</h2>
+            <p class="texto-ayuda">Completa los datos de entrega.</p>
+
+            <form action="confirmacion.html">
+
+                <div class="campo">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" name="direccion"
+                           placeholder="Ej. Av. Los Olivos 123" required>
+                </div>
+
+                <div class="campo">
+                    <label for="distrito">Distrito</label>
+                    <input type="text" id="distrito" name="distrito"
+                           placeholder="Ingresa tu distrito" required>
+                </div>
+
+                <div class="campo">
+                    <label for="referencia">Referencia</label>
+                    <input type="text" id="referencia" name="referencia"
+                           placeholder="Ej. Frente al parque principal">
+                </div>
+
+                <button type="submit" class="boton boton-completo">
+                    Continuar
+                </button>
+
+            </form>
+
+            <p class="texto-registro">
+                <a th:href="@{/carrito.html}">Volver al carrito</a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <h2>Can&Cat</h2>
+        <p>Todo lo que tus mascotas necesitan, en un solo lugar.</p>
+        <p class="copyright">© 2026 Can&Cat. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can&Cat | Iniciar sesión</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body class="pagina-formulario">
+
+    <header class="encabezado">
+        <a th:href="@{/}" class="logo">
+            <img th:src="@{/img/logo.png}" alt="Logo de Can&Cat">
+        </a>
+        <a th:href="@{/}" class="volver">Volver al inicio</a>
+    </header>
+
+    <main class="contenedor-formulario">
+
+        <section class="tarjeta-formulario">
+            <div class="formulario-logo">
+                <img th:src="@{/img/logo.png}" alt="Logo de Can&Cat" class="logo-login">
+                <p>¡Qué bueno tenerte de vuelta!</p>
+            </div>
+
+            <h2>Iniciar sesión</h2>
+            <p class="texto-ayuda">Ingresa tus datos para acceder a tu cuenta.</p>
+
+            <form>
+                <div class="campo">
+                    <label for="correo">Correo electrónico</label>
+                    <input
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        placeholder="ejemplo@correo.com"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="contrasena">Contraseña</label>
+                    <input
+                        type="password"
+                        id="contrasena"
+                        name="contrasena"
+                        placeholder="Ingresa tu contraseña"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="boton boton-completo">
+                    Iniciar sesión
+                </button>
+            </form>
+
+            <p class="texto-registro">
+                ¿Todavía no tienes una cuenta?
+                <a th:href="@{/registro}">Regístrate aquí</a>
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="pie pie-simple">
+        <p>© 2026 Can&Cat. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

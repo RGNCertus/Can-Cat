@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can&Cat | Carrito</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body>
+
+    <header class="encabezado">
+        <a th:href="@{/}" class="logo">
+            <img th:src="@{/img/logo.png}" alt="Logo de Can&Cat">
+        </a>
+
+        <nav class="navegacion">
+            <a th:href="@{/}">Inicio</a>
+            <a th:href="@{/catalogo}">Productos</a>
+            <a th:href="@{/mis_pedidos}">Mis pedidos</a>
+        </nav>
+
+        <div class="acciones">
+            <a th:href="@{/login}" class="enlace-login">Iniciar sesión</a>
+            <a th:href="@{/registro}" class="boton boton-pequeno">Registrarse</a>
+            <a th:href="@{/carrito}" class="carrito">Carrito</a>
+        </div>
+    </header>
+
+    <main class="seccion">
+
+        <div class="titulo-seccion">
+            <h2>Mi carrito de compras</h2>
+            <p>Revisa los productos antes de continuar.</p>
+        </div>
+
+        <section class="carrito-contenido">
+
+            <div class="carrito-productos">
+
+                <article class="item-carrito">
+                    <img src="img/producto1.jpg" alt="Alimento para perros">
+
+                    <div class="item-info">
+                        <h3>Alimento para perros</h3>
+                        <p>S/ 85.00</p>
+
+                        <label for="cantidad1">Cantidad:</label>
+                        <input type="number" id="cantidad1" value="1" min="1">
+                    </div>
+
+                    <button class="boton-eliminar" type="button">
+                        Eliminar
+                    </button>
+                </article>
+
+                <article class="item-carrito">
+                    <img src="img/producto2.jpg" alt="Juguete para gatos">
+
+                    <div class="item-info">
+                        <h3>Juguete para gatos</h3>
+                        <p>S/ 18.00</p>
+
+                        <label for="cantidad2">Cantidad:</label>
+                        <input type="number" id="cantidad2" value="2" min="1">
+                    </div>
+
+                    <button class="boton-eliminar" type="button">
+                        Eliminar
+                    </button>
+                </article>
+
+            </div>
+
+            <aside class="resumen-carrito">
+
+                <h3>Resumen de compra</h3>
+
+                <div class="resumen-linea">
+                    <span>Subtotal</span>
+                    <span>S/ 121.00</span>
+                </div>
+
+                <div class="resumen-linea">
+                    <span>Envío</span>
+                    <span>Por coordinar</span>
+                </div>
+
+                <hr>
+
+                <div class="resumen-total">
+                    <span>Total</span>
+                    <span>S/ 121.00</span>
+                </div>
+
+                <a th:href="@{/direccion}" class="boton boton-completo">
+                    Continuar compra
+                </a>
+
+                <a th:href="@{/catalogo}" class="seguir-comprando">
+                    Seguir comprando
+                </a>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <h2>Can&Cat</h2>
+        <p>Todo lo que tus mascotas necesitan, en un solo lugar.</p>
+        <p class="copyright">© 2026 Can&Cat. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

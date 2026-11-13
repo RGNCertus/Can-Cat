@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can&Cat | Inicio</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body>
+
+    <header class="encabezado">
+        <a th:href="@{/}" class="logo">
+            <img th:src="@{/img/logo.png}" alt="Logo de Can&Cat">
+        </a>
+
+        <nav class="navegacion">
+            <a th:href="@{/}" class="activo">Inicio</a>
+            <a th:href="@{/catalogo}">Productos</a>
+            <a th:href="@{/mis_pedidos}">Mis pedidos</a>
+        </nav>
+
+        <div class="acciones">
+            <a th:href="@{/login}" class="enlace-login">Iniciar sesión</a>
+            <a th:href="@{/registro}" class="boton boton-pequeno">Registrarse</a>
+            <a th:href="@{/carrito}" class="carrito">Carrito</a>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="banner">
+            <div class="banner-contenido">
+                <p class="etiqueta">TODO PARA TUS MASCOTAS</p>
+                <h1>El cuidado que merecen, en un solo lugar</h1>
+                <p>
+                    Encuentra alimentos, juguetes, accesorios y productos
+                    de cuidado para tus perros y gatos.
+                </p>
+                <a th:href="@{/catalogo}" class="boton">Ver productos</a>
+            </div>
+
+            <div class="banner-imagen">
+                <img th:src="@{/img/banner.jpg}" alt="Productos para mascotas">
+            </div>
+        </section>
+
+        <section class="seccion">
+            <div class="titulo-seccion">
+                <h2>Explora nuestras categorías</h2>
+                <p>Encuentra lo que tu mascota necesita.</p>
+            </div>
+
+            <div class="categorias">
+                <a th:href="@{/catalogo}" class="categoria">
+                    <img th:src="@{/img/categoria1.jpg}" alt="Alimentos">
+                    <h3>Alimentos</h3>
+                </a>
+
+                <a th:href="@{/catalogo}" class="categoria">
+                    <img th:src="@{/img/categoria2.jpg}" alt="Juguetes">
+                    <h3>Juguetes</h3>
+                </a>
+
+                <a th:href="@{/catalogo}" class="categoria">
+                    <img th:src="@{/img/categoria3.jpg}" alt="Accesorios">
+                    <h3>Accesorios</h3>
+                </a>
+
+                <a th:href="@{/catalogo}" class="categoria">
+                    <img th:src="@{/img/categoria4.jpg}" alt="Cuidado e higiene">
+                    <h3>Cuidado e higiene</h3>
+                </a>
+            </div>
+        </section>
+
+        <section class="seccion productos-destacados">
+            <div class="titulo-seccion">
+                <h2>Productos destacados</h2>
+                <p>Algunos productos que puedes encontrar en Can&Cat.</p>
+            </div>
+
+            <div class="productos">
+
+                <article class="producto" th:each="prod : ${productosDestacados}">
+                    <img th:src="${prod.imagenUrl}" alt="Producto">
+                    
+                    <div class="producto-info">
+                        <h3 th:text="${prod.nombre}">Nombre del Producto</h3>
+                        <p class="precio" th:text="'S/ ' + ${prod.precio}">S/ 0.00</p>
+
+                        <a th:href="@{/producto/detalle/{id}(id=${prod.idProducto})}" class="boton boton-secundario">
+                            Ver producto
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="centrado">
+                <a th:href="@{/catalogo}" class="boton">Ver todo el catálogo</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <h2>Can&Cat</h2>
+        <p>Todo lo que tus mascotas necesitan, en un solo lugar.</p>
+        <p class="copyright">© 2026 Can&Cat. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

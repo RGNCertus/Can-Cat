@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can&Cat | Registro</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body class="pagina-formulario">
+
+    <header class="encabezado">
+        <a th:href="@{/}" class="logo">
+            <img th:src="@{/img/logo.png}" alt="Logo de Can&Cat">
+        </a>
+        <a th:href="@{/}" class="volver">Volver al inicio</a>
+    </header>
+
+    <main class="contenedor-formulario">
+
+        <section class="tarjeta-formulario tarjeta-registro">
+
+            <div class="formulario-logo">
+                <img th:src="@{/img/logo.png}" alt="Logo de Can&Cat" class="logo-login">
+                <p>Únete a nuestra comunidad.</p>
+            </div>
+
+            <h2>Crear una cuenta</h2>
+            <p class="texto-ayuda">Completa tus datos para registrarte.</p>
+
+            <form>
+
+                <div class="grupo-campos">
+                    <div class="campo">
+                        <label for="nombres">Nombres</label>
+                        <input type="text" id="nombres" name="nombres"
+                               placeholder="Tus nombres" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="apellidos">Apellidos</label>
+                        <input type="text" id="apellidos" name="apellidos"
+                               placeholder="Tus apellidos" required>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="dni">DNI</label>
+                    <input type="text" id="dni" name="dni"
+                           placeholder="Ingresa tu DNI" maxlength="8" required>
+                </div>
+
+                <div class="campo">
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" id="correo" name="correo"
+                           placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <div class="campo">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono"
+                           placeholder="999 999 999" required>
+                </div>
+
+                <div class="campo">
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" id="contrasena" name="contrasena"
+                           placeholder="Crea una contraseña" required>
+                </div>
+
+                <div class="campo">
+                    <label for="confirmar">Confirmar contraseña</label>
+                    <input type="password" id="confirmar" name="confirmar"
+                           placeholder="Repite tu contraseña" required>
+                </div>
+
+                <button type="submit" class="boton boton-completo">
+                    Crear cuenta
+                </button>
+
+            </form>
+
+            <p class="texto-registro">
+                ¿Ya tienes una cuenta?
+                <a th:href="@{/login}">Inicia sesión</a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer class="pie pie-simple">
+        <p>© 2026 Can&Cat. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

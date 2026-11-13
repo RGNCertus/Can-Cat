@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can&Cat | Productos</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body>
+
+    <header class="encabezado">
+        <a th:href="@{/}" class="logo">
+            <img th:src="@{/img/logo.png}" alt="Logo de Can&Cat">
+        </a>
+
+        <nav class="navegacion">
+            <a th:href="@{/}">Inicio</a>
+            <a th:href="@{/catalogo}" class="activo">Productos</a>
+            <a th:href="@{/mis_pedidos}">Mis pedidos</a>
+        </nav>
+
+        <div class="acciones">
+            <a th:href="@{/login}" class="enlace-login">Iniciar sesión</a>
+            <a th:href="@{/registro}" class="boton boton-pequeno">Registrarse</a>
+            <a th:href="@{/carrito}" class="carrito">Carrito</a>
+        </div>
+    </header>
+
+    <main class="seccion">
+
+        <div class="titulo-seccion">
+            <h2>Nuestros productos</h2>
+            <p>Encuentra todo lo que tu mascota necesita.</p>
+        </div>
+
+        <div class="busqueda">
+            <input type="text" placeholder="Buscar un producto...">
+            <button class="boton">Buscar</button>
+        </div>
+
+        <div class="catalogo-contenido">
+
+            <aside class="filtros">
+                <h3>Filtrar productos</h3>
+
+                <h4>Categorías</h4>
+
+                <label><input type="checkbox"> Alimentos</label>
+                <label><input type="checkbox"> Juguetes</label>
+                <label><input type="checkbox"> Accesorios</label>
+                <label><input type="checkbox"> Cuidado e higiene</label>
+
+                <h4>Precio máximo</h4>
+
+                <select>
+                    <option>Todos los precios</option>
+                    <option>Hasta S/ 25</option>
+                    <option>Hasta S/ 50</option>
+                    <option>Hasta S/ 100</option>
+                </select>
+            </aside>
+
+            <section class="productos">
+
+                <article class="producto" th:each="prod : ${listaProductos}">
+                    <img th:src="${prod.imagenUrl}" alt="Producto">
+                    <div class="producto-info">
+                        <h3 th:text="${prod.nombre}">Nombre del Producto</h3>
+                        <p class="precio" th:text="'S/ ' + ${prod.precio}">S/ 0.00</p>
+                        <p class="disponible" th:if="${prod.stock > 0}">Disponible</p>
+                        <p class="disponible" th:if="${prod.stock == 0}" style="color: red;">Agotado</p>
+                        
+                        <a th:href="@{/producto/detalle/{id}(id=${prod.idProducto})}" class="boton boton-secundario">
+                            Ver producto
+                        </a>
+                    </div>
+                </article>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer class="pie">
+        <h2>Can&Cat</h2>
+        <p>Todo lo que tus mascotas necesitan, en un solo lugar.</p>
+        <p class="copyright">© 2026 Can&Cat. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
